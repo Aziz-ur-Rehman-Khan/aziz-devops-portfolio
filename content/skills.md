@@ -1,40 +1,30 @@
-# Skills
+# Skills Matrix
 
 ## Cloud Platforms
-- **AWS:** ECS, RDS, EC2, ElastiCache, GuardDuty, CloudTrail, CloudWatch, WAF, Fargate, IAM, ALB, Shield, Identity Center
-- **GCP:** Compute Engine, Cloud Storage, Pub/Sub, Cloud SQL, VPC, CloudRun
-- **Azure:** ARM, Bicep, Azure DevOps
+- AWS (95%)
+- GCP (90%)
+- Azure (85%)
 
 ## Infrastructure as Code
-- **Terraform:** Modular approach, public and custom modules, multi-cloud deployments, security and scalability best practices
-- **Bicep:** ARM template deployment, Azure infrastructure automation, repeatable deployments
+- Terraform (95%)
+- Bicep (80%)
 
 ## CI/CD Tools
-- Bitbucket CI/CD, GitHub Actions, Jenkins, GitLab, Azure DevOps
+- Bitbucket CI/CD (90%)
+- GitHub Actions (85%)
+- Jenkins (80%)
+- Azure DevOps (85%)
 
-## Containerization & Orchestration
-- Docker, Kubernetes
-
-## Configuration Management
-- Ansible
-
-## Monitoring & Performance
-- Datadog, New Relic, CloudWatch, CloudTrail
+## Containerization
+- Docker (90%)
+- Kubernetes (80%)
 
 ## Security
-- Zero Trust Architecture (ZTA), Cloudflare, PCI DSS Compliance, IAM management and auditing
+- Zero Trust Architecture (85%)
+- PCI DSS Compliance (80%)
+- IAM Management (90%)
 
-## Architectures
-- Microservices, MVC, Multi-account strategies, Monolithic to microservices migration
-
-## Project Management
-- Jira, Agile Methodologies
-
-## Soft Skills
-- Team Leadership (led teams of up to 14 members)
-- Problem Solving
-- Communication
-- Project Management
-- Documentation
-- Cross-functional Collaboration
-- Multi-cloud environment management
+## Monitoring
+- CloudWatch (90%)
+- Datadog (80%)
+- New Relic (75%)
