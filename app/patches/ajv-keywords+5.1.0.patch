@@ -1,0 +1,21 @@
+diff --git a/node_modules/ajv-keywords/dist/index.js b/node_modules/ajv-keywords/dist/index.js
+index d0d3d8b..fdfc3b7 100644
+--- a/node_modules/ajv-keywords/dist/index.js
++++ b/node_modules/ajv-keywords/dist/index.js
+@@ -21,8 +21,15 @@ const ajvKeywords = (ajv, keyword) => {
+ ajvKeywords.get = get;
+ function get(keyword) {
+     const defFunc = keywords_1.default[keyword];
+-    if (!defFunc)
++
++    // Skip unsupported AJV 8+ keywords gracefully
++    if (!defFunc) {
++        if (["formatMinimum", "formatMaximum", "formatExclusiveMinimum", "formatExclusiveMaximum"].includes(keyword)) {
++            return () => {}; // No-op handler
++        }
+         throw new Error("Unknown keyword " + keyword);
++    }
++
+     return defFunc;
+ }
+ exports.default = ajvKeywords;
