@@ -28,6 +28,12 @@ interface Project {
 
 interface About {
   summary: string;
+  whatIDo: {
+    title: string;
+    description: string;
+  }[];
+  philosophy: string;
+  closing: string;
   strengths: string[];
   contact: {
     email: string;
@@ -229,7 +235,27 @@ class ContentService {
       await fetch('/content/about.md');
       
       return {
-        summary: 'Experienced DevOps Engineer with almost 3 years of expertise in cloud infrastructure, automation, and security. Specializing in multi-cloud environments (AWS, GCP, Azure), I excel at designing and implementing scalable solutions using Infrastructure as Code (Terraform, Bicep). My expertise includes leading teams through complex migrations from monolithic to microservices architecture, implementing Zero Trust security frameworks, and optimizing CI/CD pipelines for faster, more reliable deployments. I have successfully reduced deployment times by 60%, improved system reliability by 40%, and achieved PCI DSS compliance while leading cross-functional teams of up to 20+ members. Passionate about automation, security-first approaches, and building resilient, scalable infrastructure that drives business growth.',
+        summary: "With nearly 3 years of hands-on experience in DevOps, I specialize in building resilient cloud infrastructures, automating processes, and integrating security best practices throughout the development lifecycle. My approach is driven by curiosity, a passion for problem-solving, and a commitment to continuous improvement.",
+        whatIDo: [
+          {
+            title: "Cloud Infrastructure",
+            description: "Designing, deploying, and managing scalable, secure environments on AWS, Azure, and GCP."
+          },
+          {
+            title: "Automation",
+            description: "Creating CI/CD pipelines, implementing Infrastructure as Code (IaC), and streamlining workflows to accelerate delivery."
+          },
+          {
+            title: "Security",
+            description: "Embedding security into every phase of the DevOps process."
+          },
+          {
+            title: "Collaboration",
+            description: "Bridging the gap between development and operations to foster effective teamwork."
+          }
+        ],
+        philosophy: "I believe in embracing new technologies, sharing knowledge, and working collaboratively to deliver high-quality, reliable solutions.",
+        closing: "Let's build the future—one pipeline at a time.",
         strengths: [
           'Multi-Cloud Expertise',
           'Infrastructure as Code',

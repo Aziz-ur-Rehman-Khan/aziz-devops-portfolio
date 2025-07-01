@@ -30,8 +30,8 @@ const MatrixBackground: React.FC = () => {
 
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     };
 
     resizeCanvas();

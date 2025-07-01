@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, BookOpen } from 'lucide-react';
 
 const ContactSection = styled.section`
   min-height: 100vh;
@@ -77,7 +77,7 @@ const ContactIcon = styled.div`
 `;
 
 const ContactText = styled.div`
-  color: #fff;
+  color: #00ff88;
   font-size: 1rem;
 `;
 
@@ -156,7 +156,8 @@ const Input = styled.input`
   }
 
   &::placeholder {
-    color: #666;
+    color: rgba(0, 255, 136, 0.6);
+    font-style: italic;
   }
 `;
 
@@ -179,7 +180,8 @@ const TextArea = styled.textarea`
   }
 
   &::placeholder {
-    color: #666;
+    color: rgba(0, 255, 136, 0.6);
+    font-style: italic;
   }
 `;
 
@@ -363,7 +365,7 @@ const Contact: React.FC = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <ExternalLink size={20} />
+                <BookOpen size={20} />
               </SocialLink>
             </SocialLinks>
           </ContactInfo>

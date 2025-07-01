@@ -34,6 +34,11 @@ const Logo = styled.div`
   font-weight: 700;
   color: #00ff88;
   text-shadow: 0 0 10px #00ff88;
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -169,7 +174,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
       }}
     >
       <Nav>
-        <Logo>AZIZ.DEV</Logo>
+        <Logo>AZIZ UR REHMAN KHAN</Logo>
         
         <NavLinks>
           {navItems.map((item) => (
@@ -182,14 +187,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
                 scrollToSection(item.id);
               }}
             >
-              {item.id === 'resume' ? (
-                <>
-                  <FileText size={16} />
-                  {item.label}
-                </>
-              ) : (
-                item.label
-              )}
+            {item.label}
+
             </NavLink>
           ))}
         </NavLinks>

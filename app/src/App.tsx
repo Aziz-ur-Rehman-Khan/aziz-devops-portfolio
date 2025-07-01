@@ -67,13 +67,13 @@ const App: React.FC = () => {
       <Header currentSection={currentSection} />
       
       <AnimatePresence>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Projects />
-        <Resume />
-        <Contact />
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Resume />
+          <Contact />
       </AnimatePresence>
     </AppContainer>
   );

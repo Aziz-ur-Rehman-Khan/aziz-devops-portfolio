@@ -117,8 +117,8 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
     if (onSectionChange) {
       onSectionChange('about');
     } else {
-      const aboutSection = document.getElementById('about');
-      if (aboutSection) {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
         aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
@@ -128,15 +128,15 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
     <HeroSection id="home">
       <FloatingIcons>
         {floatingIcons.map((item, index) => (
-          <FloatingIcon
+        <FloatingIcon
             key={index}
             style={{ left: `${item.x}%`, top: `${item.y}%` }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: item.delay, duration: 1 }}
-          >
+        >
             <item.icon size={40} />
-          </FloatingIcon>
+        </FloatingIcon>
         ))}
       </FloatingIcons>
 
@@ -148,7 +148,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
         >
           AZIZ UR REHMAN KHAN
         </Title>
-
+        
         <Subtitle
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
             {texts[currentText]}
           </motion.span>
         </Subtitle>
-
+        
         <Description
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ const Hero: React.FC<HeroProps> = ({ onSectionChange }) => {
           Experienced DevOps Engineer with expertise in AWS, GCP, and Azure. 
           Specializing in infrastructure as code, CI/CD pipelines, and cloud-native solutions.
         </Description>
-
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

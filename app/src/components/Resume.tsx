@@ -299,17 +299,17 @@ const Resume: React.FC = () => {
 
   useEffect(() => {
     const fetchResumeData = async () => {
-      try {
-        setLoading(true);
+    try {
+      setLoading(true);
         const data = await contentService.getResumeData();
         setResumeData(data);
-      } catch (err) {
+    } catch (err) {
         setError('Failed to load resume data');
         console.error('Error fetching resume data:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+    } finally {
+      setLoading(false);
+    }
+  };
 
     fetchResumeData();
   }, []);
@@ -505,13 +505,28 @@ ${data.skills.map(skill => `
             <Name>{resumeData.name}</Name>
             <ContactInfo>
               {resumeData.contact.location} | {resumeData.contact.email} | {resumeData.contact.phone}
-              <br />
-              <ContactLink href={resumeData.contact.linkedin} target="_blank" rel="noopener noreferrer">
-                LinkedIn <ExternalLink size={12} />
-              </ContactLink> | {' '}
-              <ContactLink href={resumeData.contact.medium} target="_blank" rel="noopener noreferrer">
-                Medium <ExternalLink size={12} />
-              </ContactLink>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '0.5rem' }}>
+                <ContactLink
+                  href={resumeData.contact.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  LinkedIn
+                </ContactLink>
+                <ContactLink
+                  href={resumeData.contact.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                  aria-label="Medium"
+                  title="Medium"
+                >
+                  Medium
+                </ContactLink>
+              </div>
             </ContactInfo>
           </ResumeHeader>
 

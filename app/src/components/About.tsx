@@ -7,7 +7,20 @@ import contentService from '../services/contentService';
 
 interface About {
   summary: string;
+  whatIDo: {
+    title: string;
+    description: string;
+  }[];
+  philosophy: string;
+  closing: string;
   strengths: string[];
+  contact?: {
+    email: string;
+    phone: string;
+    location: string;
+    linkedin: string;
+    medium: string;
+  };
 }
 
 const glow = keyframes`
@@ -165,20 +178,14 @@ const ProfileTitle = styled.h3`
   text-shadow: 0 0 10px #00ff88;
 `;
 
-const ProfileSubtitle = styled.p`
-  color: #ccc;
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 300;
-`;
-
-const ProfileText = styled.p`
-  color: #e0e0e0;
-  line-height: 1.9;
-  font-size: 1.1rem;
-  margin: 0;
-  text-align: justify;
-  font-weight: 300;
+const NormalText = styled.p`
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', 'Orbitron', monospace, sans-serif;
+  margin: 0 0 1rem 0;
 `;
 
 const StrengthsCard = styled(motion.div)`
@@ -333,6 +340,21 @@ const ErrorContainer = styled.div`
   border: 1px solid rgba(255, 107, 107, 0.3);
 `;
 
+const WhatIDoList = styled.ul`
+  padding-left: 1.2rem;
+  margin: 0;
+`;
+
+const NormalListItem = styled.li`
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  font-family: 'Inter', 'Orbitron', monospace, sans-serif;
+`;
+
 const About: React.FC = () => {
   const [aboutData, setAboutData] = useState<About | null>(null);
   const [loading, setLoading] = useState(true);
@@ -408,7 +430,7 @@ const About: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          DevOps Engineer passionate about cloud infrastructure and automation
+          Sr. DevOps Engineer passionate about cloud infrastructure and automation
         </SectionSubtitle>
 
         <MainContent>
@@ -423,11 +445,26 @@ const About: React.FC = () => {
                 <User />
               </ProfileIcon>
               <div>
-                <ProfileTitle>PROFESSIONAL SUMMARY</ProfileTitle>
-                <ProfileSubtitle>DevOps Engineer & Cloud Specialist</ProfileSubtitle>
+                <ProfileTitle>ABOUT ME</ProfileTitle>
               </div>
             </ProfileHeader>
-            <ProfileText>{aboutData.summary}</ProfileText>
+            <NormalText>{aboutData.summary}</NormalText>
+            <div style={{ margin: '2rem 0 1rem' }}>
+              <ProfileTitle style={{ fontSize: '1.3rem', marginBottom: '0.5rem' }}>What I Do</ProfileTitle>
+              <WhatIDoList>
+                {aboutData.whatIDo && aboutData.whatIDo.map((item, idx) => (
+                  <NormalListItem key={idx}>
+                    <strong>{item.title}:</strong> {item.description}
+                  </NormalListItem>
+                ))}
+              </WhatIDoList>
+            </div>
+            <NormalText style={{ marginTop: '1.5rem', fontStyle: 'italic', color: '#00ff88' }}>
+              {aboutData.philosophy}
+            </NormalText>
+            <NormalText style={{ marginTop: '1rem', fontWeight: 500, color: '#00ff88' }}>
+              {aboutData.closing}
+            </NormalText>
           </ProfileCard>
 
           <StrengthsCard

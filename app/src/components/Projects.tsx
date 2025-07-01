@@ -147,10 +147,10 @@ const ProjectLink = styled.a`
   &.github {
     background: rgba(0, 255, 136, 0.1);
     color: #00ff88;
-    
-    &:hover {
-      background: rgba(0, 255, 136, 0.2);
-      border-color: rgba(0, 255, 136, 0.5);
+
+  &:hover {
+    background: rgba(0, 255, 136, 0.2);
+    border-color: rgba(0, 255, 136, 0.5);
     }
   }
 
@@ -159,7 +159,7 @@ const ProjectLink = styled.a`
     color: #000;
     
     &:hover {
-      transform: translateY(-2px);
+    transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
     }
   }
@@ -259,7 +259,7 @@ const Projects: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          Featured Projects
+          Projects
         </SectionTitle>
         
         <SectionSubtitle
@@ -286,15 +286,15 @@ const Projects: React.FC = () => {
                 <ProjectTitle>{project.title}</ProjectTitle>
               </ProjectHeader>
 
-              <ProjectDescription>{project.description}</ProjectDescription>
-
+                <ProjectDescription>{project.description}</ProjectDescription>
+                
               <TechnologiesList>
                 {project.technologies.map((tech, techIndex) => (
                   <TechnologyTag key={techIndex}>{tech}</TechnologyTag>
-                ))}
+                  ))}
               </TechnologiesList>
 
-              <ProjectLinks>
+                <ProjectLinks>
                 {project.github && (
                   <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer" className="github">
                     <Github size={16} />
@@ -307,7 +307,7 @@ const Projects: React.FC = () => {
                     Live Demo
                   </ProjectLink>
                 )}
-              </ProjectLinks>
+                </ProjectLinks>
 
               <AchievementsList>
                 {project.achievements.map((achievement, achievementIndex) => (

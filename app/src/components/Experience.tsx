@@ -62,7 +62,7 @@ const Timeline = styled.div`
     background: linear-gradient(180deg, #00ff88, #00cc6a);
     transform: translateX(-50%);
 
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
       left: 20px;
     }
   }
@@ -248,17 +248,17 @@ const Experience: React.FC = () => {
 
   useEffect(() => {
     const fetchExperiences = async () => {
-      try {
-        setLoading(true);
+    try {
+      setLoading(true);
         const data = await contentService.fetchExperienceData();
         setExperiences(data);
-      } catch (err) {
+    } catch (err) {
         setError('Failed to load experience');
-        console.error('Error fetching experience:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+      console.error('Error fetching experience:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
     fetchExperiences();
   }, []);
@@ -296,9 +296,9 @@ const Experience: React.FC = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          PROFESSIONAL EXPERIENCE
+          EXPERIENCE
         </SectionTitle>
-        
+
         <SectionSubtitle
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -307,15 +307,15 @@ const Experience: React.FC = () => {
           My journey in DevOps engineering and cloud infrastructure
         </SectionSubtitle>
 
-        <Timeline>
+          <Timeline>
           {experiences.map((experience, index) => (
             <ExperienceCard
-              key={index}
+                key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ scale: 1.02 }}
-            >
+              >
               <ExperienceHeader>
                 <ExperienceIcon>
                   <Building />
@@ -335,13 +335,13 @@ const Experience: React.FC = () => {
                   </CompanyInfo>
                 </ExperienceInfo>
               </ExperienceHeader>
-
+                  
               <DescriptionList>
                 {experience.description.map((desc, descIndex) => (
                   <DescriptionItem key={descIndex}>
                     {desc}
                   </DescriptionItem>
-                ))}
+                    ))}
               </DescriptionList>
 
               <TechnologiesList>
@@ -358,11 +358,11 @@ const Experience: React.FC = () => {
                   <AchievementItem key={achievementIndex}>
                     {achievement}
                   </AchievementItem>
-                ))}
+                      ))}
               </AchievementsList>
             </ExperienceCard>
-          ))}
-        </Timeline>
+            ))}
+          </Timeline>
       </Container>
     </ExperienceSection>
   );

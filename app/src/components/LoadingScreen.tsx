@@ -80,7 +80,7 @@ const LoadingScreen: React.FC = () => {
     <LoadingContainer>
       {[...Array(50)].map((_, i) => (
         <MatrixLine key={i} delay={i * 0.1} />
-      ))}
+        ))}
       
       <LoadingText
         initial={{ opacity: 0, y: 20 }}

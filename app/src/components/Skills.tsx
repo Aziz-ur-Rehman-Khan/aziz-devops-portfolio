@@ -199,18 +199,18 @@ const Skills: React.FC = () => {
   });
 
   useEffect(() => {
-    const fetchSkills = async () => {
-      try {
-        setLoading(true);
+  const fetchSkills = async () => {
+    try {
+      setLoading(true);
         const data = await contentService.fetchSkillsData();
         setSkills(data);
-      } catch (err) {
+    } catch (err) {
         setError('Failed to load skills');
-        console.error('Error fetching skills:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+      console.error('Error fetching skills:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
     fetchSkills();
   }, []);
@@ -259,7 +259,7 @@ const Skills: React.FC = () => {
         >
           TECHNICAL SKILLS
         </SectionTitle>
-        
+
         <SectionSubtitle
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -268,22 +268,22 @@ const Skills: React.FC = () => {
           Expertise across cloud platforms, infrastructure, and DevOps tools
         </SectionSubtitle>
 
-        <SkillsGrid>
+          <SkillsGrid>
           {Object.entries(skillsByCategory).map(([category, categorySkills], categoryIndex) => (
-            <SkillCategory
+              <SkillCategory
               key={category}
               initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               whileHover={{ scale: 1.02 }}
-            >
-              <CategoryHeader>
-                <CategoryIcon>
+              >
+                <CategoryHeader>
+                  <CategoryIcon>
                   {getCategoryIcon(category)}
-                </CategoryIcon>
+                  </CategoryIcon>
                 <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
-              </CategoryHeader>
-
+                </CategoryHeader>
+                
               {categorySkills.map((skill, skillIndex) => (
                 <SkillItem key={skillIndex}>
                   <SkillHeader>
@@ -298,11 +298,11 @@ const Skills: React.FC = () => {
                       transition={{ duration: 1, delay: categoryIndex * 0.1 + skillIndex * 0.1 }}
                     />
                   </ProgressBar>
-                </SkillItem>
-              ))}
-            </SkillCategory>
-          ))}
-        </SkillsGrid>
+                    </SkillItem>
+                  ))}
+              </SkillCategory>
+            ))}
+          </SkillsGrid>
       </Container>
     </SkillsSection>
   );
